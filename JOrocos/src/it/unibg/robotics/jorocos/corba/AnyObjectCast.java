@@ -56,7 +56,7 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.corba;
 
-import it.unibg.robotics.jorocos.exceptions.IpAndPortNotDefinedException;
+import it.unibg.robotics.jorocos.exceptions.SystemIpAndPortNotDefinedException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -150,7 +150,7 @@ public class AnyObjectCast {
 			}
 
 			return any;
-		} catch (IpAndPortNotDefinedException e) {
+		} catch (SystemIpAndPortNotDefinedException e) {
 			logger.info("You have not yet initialized the Orocos System");
 			e.printStackTrace();
 			return null;

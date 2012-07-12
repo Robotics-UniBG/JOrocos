@@ -56,14 +56,17 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.exceptions;
 
+import it.unibg.robotics.jorocos.core.AbstractOrocosConnection;
+
 /**
- * The Class ConnectionNotExistException.
+ * Thrown when someone tries to use a {@link AbstractOrocosConnection}
+ * that doesn't exist.
  * 
  * @author <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
  * @version 1.0
  * @since August 2011
  */
-public class ConnectionNotExistException extends Exception{
+public class ConnectionToPortNotExistException extends Exception{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -74,11 +77,11 @@ public class ConnectionNotExistException extends Exception{
 	
 	
 	/**
-	 * Instantiates a new connection not exist exception.
+	 * Instantiates a new ConnectionToPortNotExistException.
 	 *
 	 * @param portName the port name
 	 */
-	public ConnectionNotExistException(String portName) {
+	public ConnectionToPortNotExistException(String portName) {
 		super();
 		this.portName = portName;
 	}

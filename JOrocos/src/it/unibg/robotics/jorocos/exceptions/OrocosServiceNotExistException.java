@@ -56,8 +56,11 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.exceptions;
 
+import it.unibg.robotics.jorocos.core.AbstractOrocosService;
+
 /**
- * The Class OrocosServiceNotExistException.
+ * Thrown when someone tries to use a {@link AbstractOrocosService}
+ * that doesn't exist.
  * 
  * @author <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
  * @version 1.0
@@ -74,7 +77,7 @@ public class OrocosServiceNotExistException extends Exception{
 	
 	
 	/**
-	 * Instantiates a new orocos service not exist exception.
+	 * Instantiates a new OrocosServiceNotExistException.
 	 *
 	 * @param serviceName the service name
 	 */

@@ -56,10 +56,14 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.exceptions;
 
+import it.unibg.robotics.jorocos.core.AbstractOrocosConnection;
 import it.unibg.robotics.jorocos.core.OrocosDataPort.PortType;
 
 /**
- * The Class WrongUseOfConnectionException.
+ * Thrown when someone tries to use an {@link AbstractOrocosConnection} in a way that is not allowed
+ * for the port type of the port associated to that connection (e.g. call the method 
+ * {@link AbstractOrocosConnection#writeData(Object) on a connection defined for an output port.
+ * 
  * 
  * @author <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
  * @version 1.0

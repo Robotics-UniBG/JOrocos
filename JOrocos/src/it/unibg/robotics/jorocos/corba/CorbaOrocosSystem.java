@@ -58,8 +58,8 @@ package it.unibg.robotics.jorocos.corba;
 
 import it.unibg.robotics.jorocos.core.AbstractOrocosComponent;
 import it.unibg.robotics.jorocos.core.AbstractOrocosSystem;
-import it.unibg.robotics.jorocos.exceptions.IpAndPortAlreadyDefinedException;
-import it.unibg.robotics.jorocos.exceptions.IpAndPortNotDefinedException;
+import it.unibg.robotics.jorocos.exceptions.SystemIpAndPortAlreadyDefinedException;
+import it.unibg.robotics.jorocos.exceptions.SystemIpAndPortNotDefinedException;
 import it.unibg.robotics.jorocos.exceptions.SystemNotConnectedException;
 
 import java.util.ArrayList;
@@ -132,10 +132,10 @@ public class CorbaOrocosSystem extends AbstractOrocosSystem{
 	 * @return a single instance of the Orocos system
 	 */
 	public static CorbaOrocosSystem getInstance(String systemIP, String systemPort)
-			throws IpAndPortAlreadyDefinedException {
+			throws SystemIpAndPortAlreadyDefinedException {
 		
 		if(OROCOS_IP != null){
-			throw new IpAndPortAlreadyDefinedException();
+			throw new SystemIpAndPortAlreadyDefinedException();
 		}
 		OROCOS_IP = systemIP;
 		OROCOS_PORT = systemPort;
@@ -152,10 +152,10 @@ public class CorbaOrocosSystem extends AbstractOrocosSystem{
 	 * @return a single instance of the Orocos system
 	 */
 	public static CorbaOrocosSystem getInstance()
-			throws IpAndPortNotDefinedException {
+			throws SystemIpAndPortNotDefinedException {
 		
 		if(OROCOS_IP == null){
-			throw new IpAndPortNotDefinedException();
+			throw new SystemIpAndPortNotDefinedException();
 		}else{
 			return INSTANCE;
 		}

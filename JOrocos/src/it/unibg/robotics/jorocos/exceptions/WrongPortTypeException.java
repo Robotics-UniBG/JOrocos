@@ -56,10 +56,15 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.exceptions;
 
+import it.unibg.robotics.jorocos.core.AbstractOrocosComponent;
+import it.unibg.robotics.jorocos.core.OrocosDataPort;
 import it.unibg.robotics.jorocos.core.OrocosDataPort.PortType;
 
 /**
- * The Class WrongPortTypeException.
+ * Thrown when someone tries to use an {@link OrocosDataPort} in a way that is not allowed
+ * for that port type (e.g. call the method 
+ * {@link AbstractOrocosComponent#createDataConnectionToInputPort(String, it.unibg.robotics.jorocos.core.AbstractOrocosConnection.LockPolicy, Object)}).
+ * on an output port.
  * 
  * @author <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
  * @version 1.0
@@ -70,15 +75,15 @@ public class WrongPortTypeException extends Exception{
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The type. */
+	/** The port data type. */
 	private PortType type;
 	
 	
 	
 	/**
-	 * Instantiates a new wrong port type exception.
+	 * Instantiates a WrongPortTypeException.
 	 *
-	 * @param type the type
+	 * @param type the port data type
 	 */
 	public WrongPortTypeException(PortType type) {
 		super();

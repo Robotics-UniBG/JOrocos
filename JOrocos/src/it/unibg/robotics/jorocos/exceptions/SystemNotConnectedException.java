@@ -56,8 +56,11 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.exceptions;
 
+import it.unibg.robotics.jorocos.core.AbstractOrocosSystem;
+
 /**
- * The Class SystemNotConnectedException.
+ * Thrown when someone tries to introspect or retrieve components before having create the connection
+ * to the Orocos System (see method {@link AbstractOrocosSystem# connect()}).
  * 
  * @author <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
  * @version 1.0

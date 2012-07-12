@@ -58,7 +58,7 @@ package it.unibg.robotics.jorocos.core;
 
 import it.unibg.robotics.jorocos.core.AbstractOrocosConnection.LockPolicy;
 import it.unibg.robotics.jorocos.core.OrocosDataPort.PortType;
-import it.unibg.robotics.jorocos.exceptions.ConnectionNotExistException;
+import it.unibg.robotics.jorocos.exceptions.ConnectionToPortNotExistException;
 import it.unibg.robotics.jorocos.exceptions.WrongPortTypeException;
 import it.unibg.robotics.jorocos.exceptions.WrongUseOfConnectionException;
 
@@ -526,14 +526,14 @@ public abstract class AbstractOrocosComponent{
 	 * @param value the value we want to write. It has to be of the same type of the port
 	 * @param client the client that want to write on the port, usually should be "this"
 	 * @return true if the data has been written correctly
-	 * @throws ConnectionNotExistException
+	 * @throws ConnectionToPortNotExistException
 	 * @throws WrongPortTypeException
 	 */
-	public boolean writeOnPort(String portName, Object value, Object client) throws ConnectionNotExistException, WrongPortTypeException{
+	public boolean writeOnPort(String portName, Object value, Object client) throws ConnectionToPortNotExistException, WrongPortTypeException{
 		if(! inputPortConnectionsMap.containsKey(portName) || 
 				! inputPortConnectionsMap.get(portName).containsKey(client)){
 			logger.error("The required Orocos connection to '" + portName + "' does not exist. You have to create it before writing ot reading");
-			throw new ConnectionNotExistException(portName);
+			throw new ConnectionToPortNotExistException(portName);
 		}
 		if(getPort(portName).getPortType() == PortType.OUTPUT_PORT){
 			logger.error("You are trying to write on an output port. It's not possible.");

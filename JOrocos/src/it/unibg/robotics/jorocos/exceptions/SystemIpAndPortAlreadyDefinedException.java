@@ -11,7 +11,7 @@
  *
  * -------------------------------------------------------------------------------
  *
- * File: IpAndPortNotDefinedException.java
+ * File: IpAndPortAlreadyDefinedException.java
  * Created: Jul 27, 2011
  *
  * Author: <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
@@ -56,23 +56,28 @@
  *******************************************************************************/
 package it.unibg.robotics.jorocos.exceptions;
 
+import it.unibg.robotics.jorocos.corba.CorbaOrocosSystem;
+
+
 /**
- * The Class IpAndPortNotDefinedException.
+ * Thrown when someone tries to retrieve an instance of {@link CorbaOrocosSystem}
+ * by using the method {@link CorbaOrocosSystem#getInstance(String, String)} for the second time.
+ * From the second time the method {@link CorbaOrocosSystem#getInstance()} has to be called.
  * 
  * @author <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
  * @version 1.0
  * @since August 2011
  */
-public class IpAndPortNotDefinedException extends Exception{
+public class SystemIpAndPortAlreadyDefinedException extends Exception{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/* (non-Javadoc)
+	/* (non-javadoc)
 	 * @see java.lang.Throwable#toString()
 	 */
 	public String toString(){
-		return "The IP address and the port of the Orocos system have not been yet defined.\n" +
-				"You have to use the method getInstace(String systemIp, String systemPort) during the initialization";
+		return "The IP address and the port of the Orocos system have not been already defined.\n" +
+				"You have to use the method getInstace()";
 	}
 }

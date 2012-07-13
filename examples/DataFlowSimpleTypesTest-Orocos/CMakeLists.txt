@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6.3)
 
-project(HelloWorldDataFlow)
+project(DataFlowSimpleTypesTest)
 
 set (ROS_ROOT $ENV{ROS_ROOT} )
 if (ROS_ROOT)
@@ -17,10 +17,10 @@ find_package(Orocos-RTT REQUIRED rtt-marshalling ${RTT_HINTS})
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 
 
-set(TRAJECTORY_ADAPTER_CPP src/HelloWorldDataFlow.cpp)
+set(TRAJECTORY_ADAPTER_CPP src/DataFlowSimpleTypesTest.cpp)
 
-orocos_component(HelloWorldDataFlow ${TRAJECTORY_ADAPTER_CPP}) 
+orocos_component(DataFlowSimpleTypesTest ${TRAJECTORY_ADAPTER_CPP}) 
 
-target_link_libraries( HelloWorldDataFlow ${OROCOS-RTT_RTT-MARSHALLING_LIBRARY})
+target_link_libraries( DataFlowSimpleTypesTest ${OROCOS-RTT_RTT-MARSHALLING_LIBRARY})
 
 orocos_generate_package()

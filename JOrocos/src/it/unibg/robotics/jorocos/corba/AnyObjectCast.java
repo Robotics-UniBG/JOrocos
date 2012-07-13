@@ -63,7 +63,10 @@ import java.lang.reflect.Method;
 
 import org.apache.log4j.Logger;
 import org.omg.CORBA.Any;
+import org.omg.CORBA.TCKind;
 import org.omg.CORBA.TypeCode;
+import org.omg.CORBA.TypeCodePackage.BadKind;
+import org.omg.CORBA.TypeCodePackage.Bounds;
 
 /**
  * The class AnyObjectCast provides static methods for casting generic Object to
@@ -191,8 +194,9 @@ public class AnyObjectCast {
 	 */
 	public static Object anyToObject(Any any){
 
+		
 		TypeCode type = any.type();
-
+		
 		if(type.toString().toLowerCase().equals("boolean")){
 
 			return any.extract_boolean();
@@ -217,12 +221,13 @@ public class AnyObjectCast {
 
 			return any.extract_ulong();
 		}
-		else if(type.toString().toLowerCase().equals("string")||
-				type.toString().toLowerCase().equals("/std/string")){
+		else if//(type.toString().toLowerCase().equals("string")||
+				//type.toString().toLowerCase().equals("/std/string")){
+		(type.kind().value() == TCKind._tk_string){
 			return any.extract_string();
 		}else{
 			// This is a complex type
-			String anyType = any.type().toString();
+			String anyType = type.toString();
 			String className = anyType.replace("::", ".") + "Helper";
 			if(className.startsWith("omg.org"))
 				className = className.replace("omg.org", "org.omg");

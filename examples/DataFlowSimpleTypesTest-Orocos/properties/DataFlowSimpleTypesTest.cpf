@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+  <simple name="goalDistanceThreeshold" type="float"><description>min difference between current pose and target pose in order to consider the goal position reached</description><value>-nan</value></simple>
+  <simple name="goalOrientationThreeshold" type="float"><description>min difference between current theta and target theta in order to consider the goal orientation reached</description><value>7.00783413353803e+28</value></simple>
+</properties>

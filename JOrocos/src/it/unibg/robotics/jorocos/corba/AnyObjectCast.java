@@ -264,7 +264,6 @@ public class AnyObjectCast {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//logger.error("The object you are reading does not belong to a primitive type");
 			return result;
 		}
 

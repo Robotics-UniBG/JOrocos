@@ -106,7 +106,6 @@ void DataFlowComplexTypesTest::updateHook() {
 
 	}
 
-
 }
 }
 

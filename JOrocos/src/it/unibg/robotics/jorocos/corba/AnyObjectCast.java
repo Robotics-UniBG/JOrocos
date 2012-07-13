@@ -66,7 +66,6 @@ import org.omg.CORBA.Any;
 import org.omg.CORBA.TCKind;
 import org.omg.CORBA.TypeCode;
 import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
 
 /**
  * The class AnyObjectCast provides static methods for casting generic Object to
@@ -234,10 +233,27 @@ public class AnyObjectCast {
 			return any.extract_string();
 		}else{
 			// This is a complex type
-			String anyType = type.toString();
-			String className = anyType.replace("::", ".") + "Helper";
+			String anyType = "";
+			try {
+				anyType = type.id();
+			} catch (BadKind e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			int indexOfThirsColumns = anyType.indexOf(":");
+			int indexOfSecondColumns = anyType.indexOf(":", indexOfThirsColumns+1);
+			anyType = anyType.substring(indexOfThirsColumns + 1, indexOfSecondColumns);
+			
+			String className = "";
+			if(anyType.contains("::")){
+			  className = anyType.replace("::", ".") + "Helper";
+			}else if(anyType.contains("/")){
+				className = anyType.replace("/", ".") + "Helper";
+			}
 			if(className.startsWith("omg.org"))
 				className = className.replace("omg.org", "org.omg");
+			
 			Object result = null;
 			Class<?> helper;
 			try {

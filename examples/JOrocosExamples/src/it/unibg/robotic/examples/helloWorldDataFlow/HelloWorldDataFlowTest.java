@@ -3,7 +3,7 @@ package it.unibg.robotic.examples.helloWorldDataFlow;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class Test {
+public class HelloWorldDataFlowTest {
 
 	/**
 	 * @param args

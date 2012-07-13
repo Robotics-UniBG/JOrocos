@@ -1,0 +1,11 @@
+<package>
+    <description brief="HelloWorldDataFlow">
+        This package contains the Hello World Data Flow example
+	for testing JOrocos
+    </description>
+    <license></license>
+    <author>Luca Gherardi</author>
+    <depend package="rtt"/>
+    <depend package="ocl"/>
+</package>
+

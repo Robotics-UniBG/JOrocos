@@ -1,6 +1,6 @@
 /********************************************************************************
  *
- * HelloWorldDataFlow
+ * DataFlowSimpleTypesTest
  *
  * Copyright (c) 2012
  * All rights reserved.
@@ -11,7 +11,7 @@
  *
  * -------------------------------------------------------------------------------
  *
- * File: HelloWorldDataFlow.cpp
+ * File: DataFlowSimpleTypesTest.cpp
  * Created: July 13, 2012
  *
  * Author: <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
@@ -53,60 +53,170 @@
  *
  *******************************************************************************/
 
-#include "HelloWorldDataFlow/HelloWorldDataFlow.hpp"
+#include "DataFlowSimpleTypesTest/DataFlowSimpleTypesTest.hpp"
 
 
 
 namespace JOrocos{
 
 
-HelloWorldDataFlow::HelloWorldDataFlow(string const& name)
+DataFlowSimpleTypesTest::DataFlowSimpleTypesTest(string const& name)
 : TaskContext(name),
-  inputPort("inputPort"),
-  outputPort("outputPort")
+  boolInputPort("boolInputPort"),
+  charInputPort("charInputPort"),
+  ucharInputPort("ucharInputPort"),
+  doubleInputPort("doubleInputPort"),
+  floatInputPort("floatInputPort"),
+  intInputPort("intInputPort"),
+  uintInputPort("uintInputPort"),
+  longInputPort("longInputPort"),
+  ulongInputPort("ulongInputPort"),
+  stringInputPort("stringInputPort"),
+  boolOutputPort("boolOutputPort"),
+  charOutputPort("charOutputPort"),
+  ucharOutputPort("ucharOutputPort"),
+  doubleOutputPort("doubleOutputPort"),
+  floatOutputPort("floatOutputPort"),
+  intOutputPort("intOutputPort"),
+  uintOutputPort("uintOutputPort"),
+  longOutputPort("longOutputPort"),
+  ulongOutputPort("ulongOutputPort"),
+  stringOutputPort("stringOutputPort")
 {
 
-	this->addPort(inputPort).doc("The input port");
-	this->addPort(outputPort).doc("The output port");
+	this->addPort(boolInputPort).doc("The input port");
+	this->addPort(charInputPort).doc("The input port");
+	this->addPort(ucharInputPort).doc("The input port");
+	this->addPort(doubleInputPort).doc("The input port");
+	this->addPort(floatInputPort).doc("The input port");
+	this->addPort(intInputPort).doc("The input port");
+	this->addPort(uintInputPort).doc("The input port");
+	this->addPort(longInputPort).doc("The input port");
+	this->addPort(ulongInputPort).doc("The input port");
+	this->addPort(stringInputPort).doc("The input port");
+
+	this->addPort(stringOutputPort).doc("The output port");
+	this->addPort(boolOutputPort).doc("The output port");
+	this->addPort(charOutputPort).doc("The output port");
+	this->addPort(ucharOutputPort).doc("The output port");
+	this->addPort(doubleOutputPort).doc("The output port");
+	this->addPort(floatOutputPort).doc("The output port");
+	this->addPort(intOutputPort).doc("The output port");
+	this->addPort(uintOutputPort).doc("The output port");
+	this->addPort(longOutputPort).doc("The output port");
+	this->addPort(ulongOutputPort).doc("The output port");
+
 
 }
 
-bool HelloWorldDataFlow::startHook(){
+bool DataFlowSimpleTypesTest::startHook(){
 
 	return true;
 
 }
 
-bool HelloWorldDataFlow::configureHook(){
+bool DataFlowSimpleTypesTest::configureHook(){
 
 	return true;
 
 }
 
-void HelloWorldDataFlow::stopHook(){
+void DataFlowSimpleTypesTest::stopHook(){
 
 }
 
-void HelloWorldDataFlow::cleanupHook(){
+void DataFlowSimpleTypesTest::cleanupHook(){
 
 }
 
-void HelloWorldDataFlow::updateHook() {
+void DataFlowSimpleTypesTest::updateHook() {
 
-	string input;
 
-	if(inputPort.read(input) == NewData){
+	bool input;
 
-		string output = "Hello " + input;
+	if(boolInputPort.read(input) == NewData){
 
-		cout << output << endl;
 
-		outputPort.write(output);
+
+		boolOutputPort.write(!input);
 
 	}
 
+	char charInput;
+
+	if(charInputPort.read(charInput) == NewData){
+
+		charOutputPort.write(charInput);
+
+	}
+
+	unsigned char ucharInput;
+
+	if(ucharInputPort.read(ucharInput) == NewData){
+
+		ucharOutputPort.write(ucharInput);
+
+	}
+
+	double doubleInput;
+
+	if(doubleInputPort.read(doubleInput) == NewData){
+
+		doubleOutputPort.write(doubleInput);
+
+	}
+
+	float floatInput;
+
+	if(floatInputPort.read(floatInput) == NewData){
+
+		floatOutputPort.write(floatInput);
+
+	}
+
+	int intInput;
+
+	if(intInputPort.read(intInput) == NewData){
+
+		intOutputPort.write(intInput);
+
+	}
+
+	unsigned int uintInput;
+
+	if(uintInputPort.read(uintInput) == NewData){
+
+		uintOutputPort.write(uintInput);
+
+	}
+
+	long longInput;
+
+	if(longInputPort.read(longInput) == NewData){
+
+		longOutputPort.write(longInput);
+
+	}
+
+	unsigned long ulongInput;
+
+	if(ulongInputPort.read(ulongInput) == NewData){
+
+		ulongOutputPort.write(ulongInput);
+
+	}
+
+	string stringInput;
+
+	if(stringInputPort.read(stringInput) == NewData){
+
+		stringOutputPort.write(stringInput);
+
+	}
+
+
 }
 }
 
-ORO_CREATE_COMPONENT( JOrocos::HelloWorldDataFlow );
+ORO_CREATE_COMPONENT( JOrocos::DataFlowSimpleTypesTest );
 

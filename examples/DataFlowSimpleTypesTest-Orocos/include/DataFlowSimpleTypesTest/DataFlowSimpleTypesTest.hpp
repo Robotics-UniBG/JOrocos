@@ -1,6 +1,6 @@
 /********************************************************************************
  *
- * HelloWorldDataFlow
+ * DataFlowSimpleTypesTest
  *
  * Copyright (c) 2012
  * All rights reserved.
@@ -11,7 +11,7 @@
  *
  * -------------------------------------------------------------------------------
  *
- * File: HelloWorldDataFlow.hpp
+ * File: DataFlowSimpleTypesTest.hpp
  * Created: July 13, 2012
  *
  * Author: <A HREF="mailto:luca.gherardi@unibg.it">Luca Gherardi</A>
@@ -72,17 +72,38 @@ using namespace RTT;
 
 namespace JOrocos{
 
-class HelloWorldDataFlow : public TaskContext{
+class DataFlowSimpleTypesTest : public TaskContext{
 
 public:
 
-	HelloWorldDataFlow(string const& name);
+	DataFlowSimpleTypesTest(string const& name);
 
 private:
 
 
-	InputPort<string> inputPort;
-	OutputPort<string> outputPort;
+	InputPort<bool> boolInputPort;
+	InputPort<char> charInputPort;
+	InputPort<unsigned char> ucharInputPort;
+	InputPort<double> doubleInputPort;
+	InputPort<float> floatInputPort;
+	InputPort<int> intInputPort;
+	InputPort<unsigned int> uintInputPort;
+	InputPort<long> longInputPort;
+	InputPort<unsigned long> ulongInputPort;
+	InputPort<string> stringInputPort;
+
+	OutputPort<bool> boolOutputPort;
+	OutputPort<char> charOutputPort;
+	OutputPort<unsigned char> ucharOutputPort;
+	OutputPort<double> doubleOutputPort;
+	OutputPort<float> floatOutputPort;
+	OutputPort<int> intOutputPort;
+	OutputPort<unsigned int> uintOutputPort;
+	OutputPort<long> longOutputPort;
+	OutputPort<unsigned long> ulongOutputPort;
+	OutputPort<string> stringOutputPort;
+
+
 
 	bool startHook();
 	bool configureHook();

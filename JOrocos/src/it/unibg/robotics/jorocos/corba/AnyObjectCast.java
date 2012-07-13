@@ -197,33 +197,40 @@ public class AnyObjectCast {
 		
 		TypeCode type = any.type();
 		
-		if(type.toString().toLowerCase().equals("boolean")){
+//		if(type.toString().toLowerCase().equals("boolean")){
+		if(type.kind().value() == TCKind._tk_boolean){
 
 			return any.extract_boolean();
 		}
-		else if(type.toString().toLowerCase().equals("char")){
+//		else if(type.toString().toLowerCase().equals("char")){
+		else if(type.kind().value() == TCKind._tk_char){
 
 			return any.extract_char();
 		}
-		else if(type.toString().toLowerCase().equals("double")){
+//		else if(type.toString().toLowerCase().equals("double")){
+		else if(type.kind().value() == TCKind._tk_double){
 
 			return any.extract_double();
 		}
-		else if(type.toString().toLowerCase().equals("float")){
+//		else if(type.toString().toLowerCase().equals("float")){
+		else if(type.kind().value() == TCKind._tk_float){
 
 			return any.extract_float();
 		}
-		else if(type.toString().toLowerCase().equals("long")){
+		// long is actually int in C++
+//		else if(type.toString().toLowerCase().equals("long")){
+		else if(type.kind().value() == TCKind._tk_long){
 
 			return any.extract_long();
 		}
-		else if(type.toString().toLowerCase().equals("ulong")){
+//		else if(type.toString().toLowerCase().equals("ulong")){
+		else if(type.kind().value() == TCKind._tk_ulong){
 
 			return any.extract_ulong();
 		}
-		else if//(type.toString().toLowerCase().equals("string")||
-				//type.toString().toLowerCase().equals("/std/string")){
-		(type.kind().value() == TCKind._tk_string){
+		//else if(type.toString().toLowerCase().equals("string")||
+		//		type.toString().toLowerCase().equals("/std/string")){
+		else if(type.kind().value() == TCKind._tk_string){
 			return any.extract_string();
 		}else{
 			// This is a complex type

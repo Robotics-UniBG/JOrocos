@@ -2,9 +2,9 @@
 <!DOCTYPE properties SYSTEM "cpf.dtd">
 <properties>
 	<simple name="Import" type="string">
-		<value>HelloWorldDataFlow-Orocos</value>
+		<value>DataFlowSimpleTypesTest-Orocos</value>
 	</simple>
-	<struct name="HelloWorldDataFlow" type="JOrocos::HelloWorldDataFlow">
+	<struct name="DataFlowSimpleTypesTest" type="JOrocos::DataFlowSimpleTypesTest">
 		<simple name="Server" type="boolean">
 			<value>1</value>
 		</simple>

@@ -1,0 +1,10 @@
+<package>
+    <description brief="DataFlowComplexTypesTest">
+        This package contains a simple component for testing the data flow communication (with complex data types)
+    </description>
+    <license></license>
+    <author>Luca Gherardi</author>
+    <depend package="rtt"/>
+    <depend package="ocl"/>
+</package>
+

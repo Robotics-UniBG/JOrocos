@@ -27,6 +27,7 @@ public class DataFlowSimpleTypesTest {
 		proxy.writeOnInputPort("intInputPort",-3);
 		proxy.writeOnInputPort("uintInputPort",4);
 		proxy.writeOnInputPort("stringInputPort","Hello World");
+		
 	}
 
 }

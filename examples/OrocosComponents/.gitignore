@@ -1,1 +1,11 @@
-DataFlowComplexTypesTestTypesPlugin
+.cproject 
+.project
+.pydevproject
+.tb_history
+bin
+build
+lib                         
+cmake_install.cmake
+cmake_uninstall.cmake                               
+*.pc
+orocos.log

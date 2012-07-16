@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "cpf.dtd">
 <properties>
 	<simple name="Import" type="string">
-		<value>DataFlowComplexTypesTest-Orocos</value>
+		<value>DataFlowComplexTypesTest</value>
 	</simple>
 	<simple name="Import" type="string">
 		<value>DataFlowComplexTypesTestTypesPlugin</value>

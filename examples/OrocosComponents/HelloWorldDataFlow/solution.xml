@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "cpf.dtd">
 <properties>
 	<simple name="Import" type="string">
-		<value>HelloWorldDataFlow-Orocos</value>
+		<value>HelloWorldDataFlow</value>
 	</simple>
 	<struct name="HelloWorldDataFlow" type="JOrocos::HelloWorldDataFlow">
 		<simple name="Server" type="boolean">
